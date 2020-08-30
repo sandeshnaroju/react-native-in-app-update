@@ -2,10 +2,22 @@
 Google released In App Update feature, but I did not find any `react-native` supported library for that, so I had to implement it for myself. 
 
 ### How to use ?
+1. Open `android` folder in your react-native project with `Android Studio` and add `implementation 'com.google.android.play:core:1.7.3'` in the dependencies section of the `build.gradle(app)` file. Like below,
+```dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //noinspection GradleDynamicVersion
+    implementation "com.facebook.react:react-native:+"  // From node_modules
 
-1. Download `InAppUpdateModule.java` and `InAppUpdatePackage.java` files and place in them in the same directory of `MainActivity.java`(`android/app/src/main/java/<package>/`)
-2. Change the package names in both `InAppUpdateModule.java` and `InAppUpdatePackage.java` to your project package name.
-3. Now Open `MainApplication.java` and add our 'InAppUpdatePackage' into `getPackages` method like below,
+
+    .......
+    implementation 'com.google.android.play:core:1.7.3'
+}
+```
+Cick sync after adding the dependency.         
+
+2. Download `InAppUpdateModule.java` and `InAppUpdatePackage.java` files and place in them in the same directory of `MainActivity.java`(`android/app/src/main/java/<package>/`)
+3. Change the package names in both `InAppUpdateModule.java` and `InAppUpdatePackage.java` to your project package name.
+4. Now Open `MainApplication.java` and add our `InAppUpdatePackage` into `getPackages` method like below,
 ```
         @Override
         protected List<ReactPackage> getPackages() {
@@ -17,15 +29,15 @@ Google released In App Update feature, but I did not find any `react-native` sup
           return packages;
         }
 ```
-4. Download `InAppUpdate.js` and place it into your `react-native` project.
-5. Import the `InAppUpdate.js` in any `js` file, wherever you want to use. And use it like below.
+5. Download `InAppUpdate.js` and place it into your `react-native` project.
+6. Import the `InAppUpdate.js` in any `js` file, wherever you want to use. And use it like below.
 
 ```
   componentDidMount () {
     InAppUpdate.checkUpdate() // this is how you check for update 
   }
 ```
-6. That's it.
+7. That's it.
 
 
 ### What you should know?
