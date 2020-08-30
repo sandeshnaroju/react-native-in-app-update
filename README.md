@@ -2,16 +2,18 @@
 Google released In App Update feature, but I did not find any `react-native` supported library for that, so I had to implement it for myself. 
 
 ### How to use ?
-1. Open `android` folder in your react-native project with `Android Studio` and add `implementation 'com.google.android.play:core:1.7.3'` in the dependencies section of the `build.gradle(app)` file. Like below,
-```dependencies {
+1. Open `android` folder in your react-native project with `Android Studio` and add `implementation 'com.google.android.play:core:1.7.3'` at the end of dependencies section of the `build.gradle(app)` file. Like below,
+```
+dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
 
     .......
-    implementation 'com.google.android.play:core:1.7.3'
+    implementation 'com.google.android.play:core:1.7.3' // add it at the end
 }
+
 ```
 Cick sync after adding the dependency.         
 
