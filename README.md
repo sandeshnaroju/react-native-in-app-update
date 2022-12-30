@@ -12,6 +12,7 @@ dependencies {
 
     .......
     implementation 'com.google.android.play:core:1.7.3' // add it at the end
+    implementation 'com.google.android.material:material:1.0.0' // add it too
 }
 
 ```
